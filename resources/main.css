@@ -5,7 +5,7 @@
 main {
     width: 100%;
     display: grid;
-    grid-template: 60px repeat(5, 1fr) / 1fr 4fr;
+    grid-template: 60px repeat(4, 1fr) / 1fr 4fr;
     row-gap: 12px;
     column-gap: 30px;
 }
@@ -19,8 +19,21 @@ nav {
     width: 100%;
 }
 
+.hamburger_nav {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
 header{
     grid-area: 2 / 2 / 4 / span 1;
+}
+
+form {
+    display: flex;
+    height: 20px;
 }
 
 .top-stories {
@@ -35,6 +48,7 @@ header{
     display: flex;
     justify-content: space-evenly;
     align-content: center;
+    flex-wrap: wrap;
     border: 3px solid rgb(29, 237, 240);
     margin-right:50px;
     width: 100%;
@@ -43,6 +57,7 @@ header{
 video {
     max-width: 450px;
     margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 
@@ -80,9 +95,32 @@ li {
 }
 
 @media only screen and (max-width: 620px){
+
+    nav {
+        justify-content: end;
+    }
+
+    .hamburger_nav {
+        display: flex;
+        background-color: rgb(29, 237, 240);
+        color: rgb(255, 255, 255);
+        grid-area: 2 / 3 / span 1 / span 3;
+        width: 200px;
+        height: 600px;
+        z-index: 1;
+        justify-content: space-between;
+        align-items:center;
+    }
+
+    .hamburger_nav .bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .container {
         display: block;
         overflow-x: scroll;
+        width: 100%;
     }
     .box {
         max-width: 200px;
@@ -94,6 +132,20 @@ li {
 
     .bar {
         font-size: 22px;
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
+        background-color: yellow;
+    }
+
+    .hamburger:active {
+        background-color: white;
     }
 
     .top-stories {
