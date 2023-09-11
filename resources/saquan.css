@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    grid-template: 60px repeat(2, 1fr) 400px / 1fr 4fr;
+    grid-gap: 5px 10px;
+    grid-template-areas: "nav nav"
+                         "... header"
+                         "... article"
+                         "... comment";
+}
+
+img {
+    height: 170px;
+    width: 270px;
+}
+
+nav {
+    grid-area: nav;
+    background-color: rgb(29, 237, 240);
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.click {
+    color: rgb(8, 8, 8);
+    font-size: 33px;
+    margin: auto 0;
+}
+
+
+article {
+    grid-area: article;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto auto;
+    line-height: 1.5em;
+}
+
+.content {
+    margin: auto auto;
+}
+
+header {
+    grid-area: header;
+    border-bottom: 3px solid rgba(29, 237, 240, 0.6);
+    margin-right: 30px;
+    padding-bottom: 20px;
+}
+
+.comment-section {
+    grid-area: comment;
+    margin-top: 40px;
+    background-color: rgba(145, 169, 169, 0.2);
+    margin-right: 80px;
+    display: grid;
+    grid-template-rows: repeat(12, 60px);
+    border: 2px solid rgb(27, 244, 237);
+    overflow: scroll;
+}
+
+.comment-section h3 {
+    border-bottom: 2px solid black;
+    width: 33%;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border: 0.5px solid black;
+    border-radius: 50%;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-bottom: 2px solid salmon;
+}
+
+.comment {
+    margin-left: 22px;
+}
+
+
+@media only screen and (max-width: 630px){
+    .click {
+        font-size: 22px;
+    }
+}
