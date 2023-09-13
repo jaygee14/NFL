@@ -6,8 +6,6 @@ main {
     width: 100%;
     display: grid;
     grid-template: 60px repeat(4, 1fr) / 1fr 4fr;
-    row-gap: 12px;
-    column-gap: 30px;
 }
 
 
@@ -28,7 +26,8 @@ nav {
 }
 
 header{
-    grid-area: 2 / 2 / 4 / span 1;
+    grid-area: 2 / 2 / 2 / span 1;
+    margin: 12px 30px;
 }
 
 form {
@@ -38,10 +37,12 @@ form {
 
 .top-stories {
     grid-area: 3 / 2 / span 1 / span 2;
+    margin: 0 3%;
 }
 
 .top-plays {
     grid-area: 5 / 2 / span 3 / span 2;
+    margin: 0 3%;
 }
 
 .container {
@@ -88,6 +89,7 @@ video:hover{
     background-color: rgb(252, 255, 58);
     display: flex;
     flex-direction: column;
+    margin: 12px 0px;
 }
 
 li {
@@ -96,12 +98,23 @@ li {
 
 @media only screen and (max-width: 620px){
 
+    @keyframes dropDown {
+        from {
+            transform: translateY(-500px);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+        
+    }
+
     nav {
         justify-content: end;
     }
 
     .hamburger_nav {
-        display: flex;
+        display: none;
         background-color: rgb(29, 237, 240);
         color: rgb(255, 255, 255);
         grid-area: 2 / 3 / span 1 / span 3;
@@ -110,12 +123,19 @@ li {
         z-index: 1;
         justify-content: space-between;
         align-items:center;
+        align-self: end;
     }
 
     .hamburger_nav .bar {
+        display: block;
+        height: 100%;
+    }
+
+    ul {
+        height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: space-around;
     }
     .container {
         display: block;
@@ -137,6 +157,10 @@ li {
 
     .hamburger {
         display: flex;
+    }
+
+    form {
+        display: none;
     }
 
     .hamburger:hover {

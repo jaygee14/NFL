@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PFF</title>
     <link rel="stylesheet" href="./resources/main.css">
+    <script src="./resources/main.js" defer></script>
 </head>
 
 <main>
@@ -19,22 +20,66 @@
 
     </nav>
 
-    <nav class="hamburger_nav">
-        <ul>
-            <a class='bar' href="#">
-                <li class="click">Schedule</li>
-            </a>
-            <a class="bar" href="#">
-                <li class="click">Standings</li>
-            </a>
-            <a class="bar" href="#">
-                <li class="click">Highlights</li>
-            </a>
-            <a class="bar" href="#">
-                <li class="click">Teams</li>
-            </a>
-        </ul>
-    </nav>
+    <div class="top-right">
+
+        <form>
+            <label for="favorite-team">Favorite Team</label>
+            <input type="text" id="favorite-team" name="favorite-team" required list="teams">
+            <datalist id="teams">
+                <option value="Jets"></option>
+                <option value="Bills"></option>
+                <option value="Dolphins"></option>
+                <option value="Patriots"></option>
+                <option value="Eagles"></option>
+                <option value="Giants"></option>
+                <option value="Commanders"></option>
+                <option value="Cowboys"></option>
+                <option value="Jaguars"></option>
+                <option value="Texans"></option>
+                <option value="Titans"></option>
+                <option value='Colts'></option>
+                <option value="Lions"></option>
+                <option value="Packers"></option>
+                <option value="Vikings"></option>
+                <option value="Bears"></option>
+                <option value="Browns"></option>
+                <option value="Ravens"></option>
+                <option value="Steelers"></option>
+                <option value="Bengals"></option>
+                <option value="Falcons"></option>
+                <option value="Saints"></option>
+                <option value="Panthers"></option>
+                <option value="Buccaneers"></option>
+                <option value="Chiefs"></option>
+                <option value="Broncos"></option>
+                <option value="Raiders"></option>
+                <option value="Chargers"></option>
+                <option value="Seahawks"></option>
+                <option value="Cardinals"></option>
+                <option value="Rams"></option>
+                <option value="49ers"></option>
+            </datalist>
+        </form>
+
+
+        <nav class="hamburger_nav">
+            <ul>
+                <a class='bar' href="#">
+                    <li class="click">Schedule</li>
+                </a>
+                <a class="bar" href="#">
+                    <li class="click">Standings</li>
+                </a>
+                <a class="bar" href="#">
+                    <li class="click">Highlights</li>
+                </a>
+                <a class="bar" href="#">
+                    <li class="click">Teams</li>
+                </a>
+            </ul>
+        </nav>
+
+    </div>
 
     <body>
 
@@ -89,45 +134,7 @@
             </ol>
         </div>
 
-        <form>
-            <label for="favorite-team">Favorite Team</label>
-            <input type="text" id="favorite-team" name="favorite-team" required list="teams">
-            <datalist id="teams">
-                <option value="Jets"></option>
-                <option value="Bills"></option>
-                <option value="Dolphins"></option>
-                <option value="Patriots"></option>
-                <option value="Eagles"></option>
-                <option value="Giants"></option>
-                <option value="Commanders"></option>
-                <option value="Cowboys"></option>
-                <option value="Jaguars"></option>
-                <option value="Texans"></option>
-                <option value="Titans"></option>
-                <option value ='Colts'></option>
-                <option value="Lions"></option>
-                <option value="Packers"></option>
-                <option value="Vikings"></option>
-                <option value="Bears"></option>
-                <option value="Browns"></option>
-                <option value="Ravens"></option>
-                <option value="Steelers"></option>
-                <option value="Bengals"></option>
-                <option value="Falcons"></option>
-                <option value="Saints"></option>
-                <option value="Panthers"></option>
-                <option value="Buccaneers"></option>
-                <option value="Chiefs"></option>
-                <option value="Broncos"></option>
-                <option value="Raiders"></option>
-                <option value="Chargers"></option>
-                <option value="Seahawks"></option>
-                <option value="Cardinals"></option>
-                <option value="Rams"></option>
-                <option value="49ers"></option>
-            </datalist>
-        </form>
-
+        
 
     </body>
 </main>
