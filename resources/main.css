@@ -30,6 +30,26 @@ header{
     margin: 12px 30px;
 }
 
+header img {
+    width: 75px;
+    height: 50px;
+    margin: 2px;
+}
+
+.scoreBoard {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.game {
+    display: flex;
+    text-align: center;
+    border: 3px solid rgb(29, 237, 240);
+    margin-top: 1rem;
+}
+
 form {
     display: flex;
     height: 20px;
