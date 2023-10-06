@@ -37,7 +37,7 @@ function generateScoreboard(object) {
     const scoreboard = document.getElementById('scoreBoard');
     const div = addElementey('div', 'game');
     const team = addElementey('div', 'team');
-    const team2 = addElementey('div', 'team');
+    const team2 = addElementey('div', 'hometeam');
 
     div.appendChild(team);
     div.appendChild(team2);
@@ -50,6 +50,7 @@ function generateScoreboard(object) {
     for (img of object.images){
         const game = document.getElementsByClassName('game');
         const opponent = document.getElementsByClassName('team');
+        const hometeam = document.getElementsByClassName('hometeam')
         //create elements
         const awayImg = document.createElement('img')
         const awayScore = document.createElement('p')
@@ -57,9 +58,9 @@ function generateScoreboard(object) {
         awayImg.src = img[0];
         awayScore.textContent = object.scores[i][0]
         //add to div
-        opponent[x].appendChild(awayImg);
-        opponent[x].appendChild(awayScore);
-        game[i].appendChild(opponent[x]);
+        opponent[i].appendChild(awayImg);
+        opponent[i].appendChild(awayScore);
+        game[i].appendChild(opponent[i]);
 
         const tag = addElementey('p', 'tag');
         tag.textContent = 'vs';
@@ -70,16 +71,16 @@ function generateScoreboard(object) {
         homeImg.src = img[1];
         homeScore.textContent = object.scores[i][1]
         //add to div
-        opponent[y].appendChild(homeImg);
-        opponent[y].appendChild(homeScore);
+        hometeam[i].appendChild(homeImg);
+        hometeam[i].appendChild(homeScore);
         game[i].appendChild(tag);
-        game[i].appendChild(opponent[y]);
+        game[i].appendChild(hometeam[i]);
 
         scoreboard.appendChild(game[i])
 
         const div2 = addElementey('div', 'game')
         const teamOne = addElementey('div', 'team');
-        const teamTwo = addElementey('div', 'team');
+        const teamTwo = addElementey('div', 'hometeam');
 
         div2.appendChild(teamOne);
         div2.appendChild(teamTwo);
@@ -89,6 +90,8 @@ function generateScoreboard(object) {
         y = y + 2;
         x = x + 2;
     }
+
+    game[14].remove()
 }
 
 function printData(data) {
