@@ -6,6 +6,12 @@ function getGames() {
     })
 }
 
+function addElementey(element, clasName) {
+    const div = document.createElement(element);
+    div.classList.add(clasName);
+    return div;
+}
+
 function getData(data) {
     let img_links = [];
     let scores = []
@@ -22,49 +28,66 @@ function getData(data) {
         scores.push(games)
         img_links.push(images)
     }
-    const answer = { images: [img_links], scores: [scores] }
+    const answer = { images: img_links, scores: scores }
     console.log(answer.images)
     return answer
 }
 
 function generateScoreboard(object) {
     const scoreboard = document.getElementById('scoreBoard');
-    const div = document.createElement('div');
-    div.classList.add('game');
+    const div = addElementey('div', 'game');
+    const team = addElementey('div', 'team');
+    const team2 = addElementey('div', 'team');
 
+    div.appendChild(team);
+    div.appendChild(team2);
     scoreboard.appendChild(div)
 
     i = 0;
+    x = 0;
+    y = 1;
 
     for (img of object.images){
-        const game = document.getElementsByClassName('game')
-        const div = document.createElement('div')
-        div.classList.add('game')
+        const game = document.getElementsByClassName('game');
+        const opponent = document.getElementsByClassName('team');
         //create elements
         const awayImg = document.createElement('img')
         const awayScore = document.createElement('p')
         //add assets
-        awayImg.src = img[i][0];
-        awayScore.textContent = object.scores[i][0][0]
-        const tag = document.createElement('p')
-        tag.textContent = 'vs';
-        tag.classList.add('tag')
+        awayImg.src = img[0];
+        awayScore.textContent = object.scores[i][0]
         //add to div
-        game[i].appendChild(awayImg);
-        game[i].appendChild(awayScore);
-        game[i].appendChild(tag);
+        opponent[x].appendChild(awayImg);
+        opponent[x].appendChild(awayScore);
+        game[i].appendChild(opponent[x]);
+
+        const tag = addElementey('p', 'tag');
+        tag.textContent = 'vs';
 
         const homeImg = document.createElement('img')
         const homeScore = document.createElement('p')
         //add assets
-        homeImg.src = img[i][1];
-        homeScore.textContent = object.scores[i][0][1]
+        homeImg.src = img[1];
+        homeScore.textContent = object.scores[i][1]
         //add to div
-        game[i].appendChild(homeImg);
-        game[i].appendChild(homeScore);
+        opponent[y].appendChild(homeImg);
+        opponent[y].appendChild(homeScore);
+        game[i].appendChild(tag);
+        game[i].appendChild(opponent[y]);
 
-        scoreboard.appendChild(div)
-        i++
+        scoreboard.appendChild(game[i])
+
+        const div2 = addElementey('div', 'game')
+        const teamOne = addElementey('div', 'team');
+        const teamTwo = addElementey('div', 'team');
+
+        div2.appendChild(teamOne);
+        div2.appendChild(teamTwo);
+        scoreboard.appendChild(div2);
+
+        i++;
+        y = y + 2;
+        x = x + 2;
     }
 }
 

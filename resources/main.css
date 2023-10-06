@@ -36,7 +36,7 @@ header img {
     margin: 2px;
 }
 
-.scoreBoard {
+#scoreBoard {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -48,6 +48,14 @@ header img {
     text-align: center;
     border: 3px solid rgb(29, 237, 240);
     margin-top: 1rem;
+    width: 30%;
+
+    transition: 400ms background-color ease-in-out 50ms;
+}
+
+.game:hover {
+    background-color: rgb(29, 237, 240);
+    cursor: pointer;
 }
 
 form {
