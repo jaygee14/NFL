@@ -1,6 +1,6 @@
 function getGames() {
     return new Promise((resolve, reject) => {
-        fetch('http://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard')
+        fetch('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard')
             .then(response => response.json())
             .then(jsonResponse => resolve(jsonResponse.events))
     })
