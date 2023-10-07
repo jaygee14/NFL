@@ -1,11 +1,37 @@
+@font-face {
+    font-family: 'Delta Gothic';
+    src: url('./fonts/Dela_Gothic_One/DelaGothicOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bree';
+    src: url('./fonts/Bree_Serif/BreeSerif-Regular.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
+}
+
+h2,
+h3,
+h4,
+p {
+    font-family: 'Bree';
 }
 
 main {
     width: 100%;
     display: grid;
     grid-template: 60px repeat(4, 1fr) / 1fr 4fr;
+}
+
+.top-right {
+    display: flex;
+    height: 400px;
+}
+
+h1 {
+    font-family: 'Delta Gothic', sans-serif;
 }
 
 
@@ -39,16 +65,16 @@ header img {
 #scoreBoard {
     display: flex;
     justify-content: space-between;
+    align-content: space-between;
     flex-wrap: wrap;
     width: 90%;
 }
 
 .game {
     display: flex;
+    justify-content: center;
     text-align: center;
     border: 3px solid rgb(29, 237, 240);
-    margin-top: 1rem;
-    width: 30%;
 
     transition: 400ms background-color ease-in-out 50ms;
 }
@@ -66,6 +92,10 @@ form {
 .top-stories {
     grid-area: 3 / 2 / span 1 / span 2;
     margin: 0 3%;
+}
+
+img:hover {
+    width: width * 2;
 }
 
 .top-plays {

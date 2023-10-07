@@ -29,7 +29,6 @@ function getData(data) {
         img_links.push(images)
     }
     const answer = { images: img_links, scores: scores }
-    console.log(answer.images)
     return answer
 }
 
@@ -90,11 +89,11 @@ function generateScoreboard(object) {
         y = y + 2;
         x = x + 2;
     }
-
-    game[14].remove()
+    const games = document.getElementsByClassName('game');
+    games[14].remove()
 }
 
 function printData(data) {
-    console.log(data[0].competitions[0].competitors[0].score)
+    console.log(data)
 }
-getGames().then(getData).then(generateScoreboard)
+getGames().then(getData).then(generateScoreboard);
