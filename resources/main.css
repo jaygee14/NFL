@@ -22,12 +22,13 @@ p {
 main {
     width: 100%;
     display: grid;
-    grid-template: 60px repeat(4, 1fr) / 1fr 4fr;
+    grid-template: 60px repeat(2, 1fr) / 1fr 4fr;
+    row-gap: 100px;
 }
 
 .top-right {
     display: flex;
-    height: 400px;
+    height: 100px;
 }
 
 h1 {
@@ -99,8 +100,12 @@ img:hover {
 }
 
 .top-plays {
-    grid-area: 5 / 2 / span 3 / span 2;
-    margin: 0 3%;
+    grid-area: 4 / 2 / span 1 / span 2;
+    margin: 0px 3%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .container {
@@ -113,7 +118,7 @@ img:hover {
     width: 100%;
 }
 
-video {
+iframe {
     max-width: 450px;
     margin-bottom: 30px;
     margin-top: 20px;
@@ -132,6 +137,7 @@ video:hover{
 
 .box > img {
     min-width: 80px;
+    max-width: 170px;
     height: 200px;
     flex-shrink: 1;
 }
@@ -140,6 +146,11 @@ video:hover{
     text-align: center;
     min-width: 80px;
     margin-top: 24px;
+    width: 33%;
+}
+
+.box h4 {
+    margin-inline: 30px;
 }
 
 .sidebar {
@@ -154,83 +165,85 @@ li {
     font-size: 20px;;    
 }
 
-@media only screen and (max-width: 620px){
 
-    @keyframes dropDown {
-        from {
-            transform: translateY(-500px);
+
+@media only screen and (max-width: 840px) {
+    .sidebar {
+        display: none;
+    }
+
+    header {
+        grid-area: 2 / 1 / 2 / span 3;
+        margin: 12px 30px;
+    }
+
+        nav {
+            justify-content: end;
         }
-
-        to {
-            transform: translateY(0);
+    
+        .hamburger_nav {
+            display: none;
+            background-color: rgb(29, 237, 240);
+            color: rgb(255, 255, 255);
+            grid-area: 2 / 3 / span 1 / span 3;
+            width: 200px;
+            height: 600px;
+            z-index: 1;
+            justify-content: space-between;
+            align-items: center;
+            align-self: end;
         }
-        
-    }
-
-    nav {
-        justify-content: end;
-    }
-
-    .hamburger_nav {
-        display: none;
-        background-color: rgb(29, 237, 240);
-        color: rgb(255, 255, 255);
-        grid-area: 2 / 3 / span 1 / span 3;
-        width: 200px;
-        height: 600px;
-        z-index: 1;
-        justify-content: space-between;
-        align-items:center;
-        align-self: end;
-    }
-
-    .hamburger_nav .bar {
-        display: block;
-        height: 100%;
-    }
-
-    ul {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .container {
-        display: block;
-        overflow-x: scroll;
-        width: 100%;
-    }
-    .box {
-        max-width: 200px;
-    }
-
-    h2 {
-        margin-top: 15px;
-    }
-
-    .bar {
-        font-size: 22px;
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    form {
-        display: none;
-    }
-
-    .hamburger:hover {
-        cursor: pointer;
-        background-color: yellow;
-    }
-
-    .hamburger:active {
-        background-color: white;
-    }
-
-    .top-stories {
-        grid-area: 3 / 2 / span 1 / span 2;
-    }
+    
+        .hamburger_nav .bar {
+            display: block;
+            height: 100%;
+        }
+    
+        ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    
+        .container {
+            display: block;
+            overflow-x: scroll;
+            width: 100%;
+        }
+    
+        .box {
+            max-width: 200px;
+        }
+    
+        h2 {
+            margin-top: 15px;
+        }
+    
+        .bar {
+            font-size: 22px;
+            display: none;
+        }
+    
+        .hamburger {
+            display: flex;
+        }
+    
+        form {
+            display: none;
+        }
+    
+        .hamburger:hover {
+            cursor: pointer;
+            background-color: yellow;
+        }
+    
+        .hamburger:active {
+            background-color: white;
+        }
+    
+        .top-stories {
+            grid-area: 3 / 2 / span 1 / span 2;
+        }
+    
 }
